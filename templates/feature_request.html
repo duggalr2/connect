@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {# Link to Animate cdn  #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+
+    {# Link to Semantic cdn  #}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+
+
+    {# Skeleton CSS #}
+{#        <link rel="stylesheet" href="{% static 'css/custom.css' %}">#}
+{#        <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">#}
+{#        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">#}
+
+{# TODO: Fix the active items on menubar #}
+
+
+</head>
+<body>
+<div class="ui menu">
+  <div class="header item">
+    Rahul's Navbar
+  </div>
+    <a class="item" href="{% url 'main_page' %}">
+    Main
+    </a>
+  <a class="item" href="{% url 'main_profile' %}">
+      Edit Profile
+  </a>
+    <a class="item active" href="{% url 'feature_request' %}">
+        Request Features
+  </a>
+  <a class="item">
+    Logout
+  </a>
+</div>
+
+{#<div class="ui menu">#}
+{#  <div class="header item">#}
+{#    NAME#}
+{#  </div>#}
+{#    <a class="item" href="{% url 'main_page' %}">#}
+{#    Main#}
+{#    </a>#}
+{#  <a class="item" href="{% url 'main_profile' %}">#}
+{#    Profile#}
+{#  </a>#}
+{#    <a class="item active" href="{% url 'feature_request' %}">#}
+{#    Feature Request#}
+{#  </a>#}
+{#  <a class="item">#}
+{#    Logout#}
+{#  </a>#}
+{#</div>#}
+
+<h1 style="text-align: center;">Always looking for feedback, feature requests, etc!</h1>
+
+<div class="container" style="margin-left: 35%; margin-top: 5%;">
+    <form class="ui form">
+
+        <div class="six wide field">
+            <label>Subject</label>
+            <input type="text" name="Subject" placeholder="Subject...">
+        </div>
+
+      <div class="ui form">
+          <div class="field">
+            <label>Text</label>
+            <textarea placeholder="List any comments, concerns, bugs, features, anything..." style="width: 50%;"></textarea>
+          </div>
+      </div>
+
+    </form>
+</div>
+
+
+
+</body>
+</html>

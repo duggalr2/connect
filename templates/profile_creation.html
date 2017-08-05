@@ -1,0 +1,163 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {# Link to Animate cdn  #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    {# Link to Semantic cdn  #}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+
+
+    {# Skeleton CSS #}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+
+    {# Link to BootStrap #}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">#}
+
+    {# Link to BootStrap JS #}
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+{# TODO: Organize code tonight, getting confusing already #}
+{# TODO: When you select an image, make it flash or no that user selected it #}
+{# TODO: ADD EMOJIS/ICONS in form and other stuff! play around with it!  #}
+{# TODO: NEED TO FIND A WAY TO MAKE THE QUESTIONS LOOK ALOT BETTER? MAYBE ANOTHER FORM/PAGE STYLE?  #}
+{# TODO: For Icons, have like 6 of them showing and let user choose one #}
+{# TODO: For the images, do they need to be in form mode to saev in database?? Search this up #}
+
+<body>
+
+{# Progress bar #}
+<div class="ui tiny blue progress" id="myProgress">
+  <div class="bar" id="myBar"></div>
+</div>
+
+
+{# Part 1: Questions #}
+
+{# Profile Image #}
+<h1 style="text-align: center; margin-top: 3%">Welcome Rahul!<i class="heart icon"></i></h1>
+<h5 style="text-align: center;">Let's start with some easy questions!</h5>
+
+<div class="container" style="margin-left: 25%">
+<div class="ui six doubling cards">
+  <div class="ui fluid card">
+    <div class="image">
+      <img src="{% static 'images/elliot.jpg' %}">
+        <div class="content">
+            </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="{% static 'images/helen.jpg' %}">
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="{% static 'images/steve.jpg' %}">
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="{% static 'images/stevie.jpg' %}">
+    </div>
+  </div>
+</div>
+</div>
+
+
+{# Gender #}
+
+<div class="three columns animated fadeInUp" style="display: block; margin-left: 40%;">
+
+    <label for="exampleRecipientInput" style="margin-top: 2%">Gender<i class="angle down icon"></i></label>
+        <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Choose One, not me though!</option>
+            <option value="Option 2">Male</option>
+            <option value="Option 3">Female</option>
+            <option value="Option 4">Other</option>
+      </select>
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>
+        <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Choose One, not me though!</option>
+            <option value="Option 2">Undergraduate</option>
+            <option value="Option 3">Graduate</option>
+            <option value="Option 4">PostDoc</option>
+            <option value="Option 5">Alumni</option>
+      </select>
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Major<i class="angle down icon"></i> </label>
+        <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Choose One, not me though!</option>
+            <option value="Option 2">Undergraduate</option>
+            <option value="Option 3">Graduate</option>
+            <option value="Option 4">PostDoc</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+      </select>
+    <a class="btn" onclick="urlreplace()">
+        <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Next Page<i class="star half empty icon" style="margin-left: 5%"></i></button>
+    </a>
+</div>
+
+<script>
+    function urlreplace() {
+        window.location.replace({% url 'creation_finish' %});
+    }
+
+</script>
+
+
+<script>
+var value = 0,
+tb = document.getElementById("myProgress"),
+progress = document.getElementById("myBar");
+function increase(){
+  value = value + 50;
+  if(value>=100) value = 100;
+  tb.value = value;
+  progress.style.width = value + "%";
+}
+</script>
+
+
+{# Script's #}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
+</body>
+</html>
+
+
+
+{#<div class="container">#}
+{#    <h1>User Profile Creation</h1>#}
+{#    <img src="{% static 'images/profile_icon.png' %}">#}
+{#</div>#}

@@ -1,0 +1,124 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {# Link to Animate cdn  #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    {# Link to Semantic cdn  #}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+
+
+    {# Skeleton CSS #}
+{#    <link rel="stylesheet" href="{% static 'css/custom.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">#}
+
+    {# Link to BootStrap #}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">#}
+
+    {# Link to BootStrap JS #}
+{#    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>#}
+{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>#}
+
+</head>
+
+{# TODO: This is where user edits his profile #}
+{# TODO: Ability to edit his name, username, password?, questions, and everything else.. #}
+{# TODO: Font must be conssitent across all websites! #}
+
+<body>
+
+<div class="ui menu">
+  <div class="header item">
+    Rahul's Navbar
+  </div>
+    <a class="item" href="{% url 'main_page' %}">
+    Main
+    </a>
+  <a class="item active" href="{% url 'main_profile' %}">
+      Edit Profile
+  </a>
+    <a class="item" href="{% url 'feature_request' %}">
+        Request Features
+  </a>
+  <a class="item">
+    Logout
+  </a>
+</div>
+
+
+<h2 style="text-align: center; margin-top: 2%">Edit Your Profile</h2>
+<div class="container" style="margin-left: 25%">
+<h5>Choosing another profile picture?</h5>
+    </div>
+<div class="container" style="margin-left: 25%; margin-top: 1%">
+    <div class="ui six doubling cards">
+  <div class="ui fluid card">
+    <div class="image">
+      <img src="{% static 'images/elliot.jpg' %}">
+        <div class="content">
+            </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="{% static 'images/helen.jpg' %}">
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="{% static 'images/steve.jpg' %}">
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="{% static 'images/stevie.jpg' %}">
+    </div>
+  </div>
+</div>
+    <div class="container" style="margin-left: 20%; margin-top: 4%;">
+    <form class="ui form">
+
+        <div class="six wide field">
+            <label>Name</label>
+            <input type="text" name="Name" placeholder="Changing your name??">
+        </div>
+
+        <div class="six wide field">
+            <label>Username</label>
+            <input type="text" name="Username" placeholder="Username">
+        </div>
+
+        <div class="six wide field">
+            <label>Email</label>
+            <input type="text" name="Email" placeholder="Email">
+        </div>
+
+
+    </form>
+
+        <a class="btn" href="{% url 'main_page' %}">
+            <button class="ui button" type="submit" style="margin-left: 10%; margin-top: 2%">Save & Exit</button>
+        </a>
+
+        <a class="btn" href="{% url 'profile_creation' %}">
+            <h4 style="margin-top: 2%">Want to redo the questions? <button class="ui button" type="submit" style="margin-left: 1.5%">Click Here</button></h4>
+        </a>
+
+    </div>
+</div>
+
+
+
+{# Script's #}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
+</body>
+</html>

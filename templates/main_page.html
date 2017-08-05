@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+ {# Link to Animate cdn  #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    {# Link to Semantic cdn  #}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+
+
+    {# Skeleton CSS #}
+{#    <link rel="stylesheet" href="{% static 'css/custom.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">#}
+
+    {# Link to BootStrap #}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">#}
+
+    {# Link to BootStrap JS #}
+{#    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>#}
+{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>#}
+</head>
+
+<body>
+
+<div class="ui menu">
+  <div class="header item">
+    Rahul's Navbar
+  </div>
+    <a class="item active" href="{% url 'main_page' %}">
+    Main
+    </a>
+  <a class="item" href="{% url 'main_profile' %}">
+      Edit Profile
+  </a>
+    <a class="item" href="{% url 'feature_request' %}">
+        Request Features
+  </a>
+  <a class="item">
+    Logout
+  </a>
+</div>
+
+<div style="text-align: center; margin-top: 3.5%;">
+    <h1>Welcome, Rahul!</h1>
+    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio turpis, feugiat id dui sed, lacinia dictum arcu.</h5>
+    <h5>Sed non est ultricies, lobortis lectus tincidunt, faucibus eros. Proin malesuada ligula lorem, ut feugiat </h5>
+    <h5>Morbi vitae ipsum dictum, vulputate felis viverra, interdum est.</h5>
+</div>
+
+<div class="ui one column stackable center aligned page grid">
+    <button class="ui inverted blue button" style="margin-top: 7%;">Connect!</button>
+</div>
+
+
+<div class="ui divider" style="margin-top: 3%"></div>
+
+<h3>Mini-Feed</h3>
+<div class="ui list">
+  <div class="item">
+    <img class="ui avatar image" src="{% static 'images/elliot.jpg' %}">
+    <div class="content">
+      <a class="header">Rachel</a>
+      <div class="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+    </div>
+  </div>
+  <div class="item">
+    <img class="ui avatar image" src="{% static 'images/elliot.jpg' %}">
+    <div class="content">
+      <a class="header">Lindsay</a>
+      <div class="description">Last seen watching <a><b>Bob's Burgers</b></a> 10 hours ago.</div>
+    </div>
+  </div>
+  <div class="item">
+    <img class="ui avatar image" src="{% static 'images/elliot.jpg' %}">
+    <div class="content">
+      <a class="header">Matthew</a>
+      <div class="description">Last seen watching <a><b>The Godfather Part 2</b></a> yesterday.</div>
+    </div>
+  </div>
+  <div class="item">
+    <img class="ui avatar image" src="{% static 'images/elliot.jpg' %}">
+    <div class="content">
+      <a class="header">Jenny Hess</a>
+      <div class="description">Last seen watching <a><b>Twin Peaks</b></a> 3 days ago.</div>
+    </div>
+  </div>
+  <div class="item">
+    <img class="ui avatar image" src="{% static 'images/elliot.jpg' %}">
+    <div class="content">
+      <a class="header">Veronika Ossi</a>
+      <div class="description">Has not watched anything recently</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{# Script's #}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+     {# Link to Animate cdn  #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    {# Link to Semantic cdn  #}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+
+
+    {# Skeleton CSS #}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+
+    {# Link to BootStrap #}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">#}
+
+    {# Link to BootStrap JS #}
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+</head>
+
+{# TODO: NEED TO REVISE THE QUESTIONS THAT WILL BE ASKED! #}
+{# TODO: Need to fill this page up more, looks way to empty #}
+
+<body>
+
+{# Progress bar #}
+<div class="ui tiny blue progress" id="myProgress" style="width: 100%;">
+  <div class="bar" id="myBar" style="width: 50%"></div>
+</div>
+
+<div class="container animated fadeInUp">
+    <div class="row">
+              <h1 style="text-align: center; margin-top: 3%">Almost Done...<i class="flag checkered icon"></i></h1>
+              <h5 style="text-align: center;">Trust me, they aren't as hard as they look!</h5>
+          </div>
+</div>
+
+<div class="ui three column very relaxed grid animated fadeInUp" style="display: block; margin-left: 15%; margin-top: 2%">
+
+  <div class="column">
+
+{#  <div class="ui vertical divider">#}
+{#    not#}
+{#  </div>#}
+{#  <div class="column">#}
+{#    <p></p>#}
+{#    <p></p>#}
+{#    <p></p>#}
+{#    <p></p>#}
+{#  </div>#}
+{#</div>#}
+
+    <label for="exampleRecipientInput">Gender<i class="angle down icon"></i></label>
+        <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Choose One, not me though!</option>
+            <option value="Option 2">Male</option>
+            <option value="Option 3">Female</option>
+            <option value="Option 4">Other</option>
+      </select>
+
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>#}
+{#        <select class="u-full-width" id="exampleRecipientInput">#}
+{#        <option value="Option 1">Choose One, not me though!</option>#}
+{#            <option value="Option 2">Undergraduate</option>#}
+{#            <option value="Option 3">Graduate</option>#}
+{#            <option value="Option 4">PostDoc</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#      </select>#}
+
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>#}
+{#        <select class="u-full-width" id="exampleRecipientInput">#}
+{#        <option value="Option 1">Choose One, not me though!</option>#}
+{#            <option value="Option 2">Undergraduate</option>#}
+{#            <option value="Option 3">Graduate</option>#}
+{#            <option value="Option 4">PostDoc</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#      </select>#}
+
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>
+        <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Choose One, not me though!</option>
+            <option value="Option 2">Undergraduate</option>
+            <option value="Option 3">Graduate</option>
+            <option value="Option 4">PostDoc</option>
+            <option value="Option 5">Alumni</option>
+      </select>
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Major<i class="angle down icon"></i> </label>
+        <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Choose One, not me though!</option>
+            <option value="Option 2">Undergraduate</option>
+            <option value="Option 3">Graduate</option>
+            <option value="Option 4">PostDoc</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+            <option value="Option 5">Alumni</option>
+      </select>
+
+
+      <div class="field">
+                    <label>Short Text</label>
+                    <textarea rows="2"></textarea>
+                </div>
+
+</div>
+
+{#    <div class="ui vertical divider">#}
+{#            and#}
+{#      </div>#}
+
+        <div class="column">
+            <div class="ui form">
+
+
+
+                <div class="field">
+                    <label>Short Text</label>
+                    <textarea rows="2"></textarea>
+                </div>
+
+                  <div class="inline fields">
+                      <label>What's your favorite fruit?</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Apples</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Oranges</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Pears</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Grapefruit</label>
+      </div>
+    </div>
+  </div>
+                <div class="grouped fields">
+    <label for="fruit">Select your second favorite fruit:</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Apples</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Oranges</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Pears</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Grapefruit</label>
+      </div>
+    </div>
+  </div>
+
+                <div class="ui form">
+  <div class="field">
+    <label>IQ Question? </label>
+    <input type="text">
+  </div>
+</div>
+
+
+
+{#  <div class="inline field">#}
+{#    <div class="ui checkbox">#}
+{#      <input type="checkbox" tabindex="0" class="hidden">#}
+{#      <label>Checkbox</label>#}
+{#    </div>#}
+{#  </div>#}
+
+{#                <div class="inline field">#}
+{#    <div class="ui checkbox">#}
+{#      <input type="checkbox" tabindex="0" class="hidden">#}
+{#      <label>Checkbox</label>#}
+{#    </div>#}
+{#  </div>#}
+
+
+
+    </div>
+
+</div>
+
+</div>
+
+
+<a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">
+    <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>
+</a>
+
+
+<script>
+    function urlreplace() {
+        window.location.replace({% url 'main_page' %});
+    }
+
+</script>
+
+
+<script>
+var value = 50,
+tb = document.getElementById("myProgress"),
+progress = document.getElementById("myBar");
+function increase(){
+  value = value + 50;
+  if(value>=100) value = 100;
+  tb.value = value;
+  progress.style.width = value + "%";
+}
+</script>
+
+
+{# Script's #}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
+    <script>
+        $('.ui.radio.checkbox')
+            .checkbox()
+        ;
+
+        $('.ui.checkbox')
+         .checkbox()
+        ;
+
+    </script>
+
+
+
+</body>
+</html>
