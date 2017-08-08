@@ -28,9 +28,6 @@
 
 </head>
 
-{# TODO: This is where user edits his profile #}
-{# TODO: Ability to edit his name, username, password?, questions, and everything else.. #}
-{# TODO: Font must be conssitent across all websites! #}
 
 <body>
 
@@ -83,29 +80,45 @@
   </div>
 </div>
     <div class="container" style="margin-left: 20%; margin-top: 4%;">
-    <form class="ui form">
+    <form class="ui form" method="POST" action="">{% csrf_token %}
+
+{#        {{ form.as_p }}#}
 
         <div class="six wide field">
             <label>Name</label>
-            <input type="text" name="Name" placeholder="Changing your name??">
+            <input type="text" name="Name" placeholder="Changing your name??" disabled>
         </div>
 
         <div class="six wide field">
-            <label>Username</label>
-            <input type="text" name="Username" placeholder="Username">
+            {% load widget_tweaks %}
+            <label>New Username</label>
+            {% render_field form.username  placeholder='' %}
+{#            {{ render_field form.username | placeholder=field.label }}#}
         </div>
+{#        <div class="six wide field">#}
+{#            <label>Username</label>#}
+{#            <input type="text" name="Username" placeholder="Username">#}
+{#        </div>#}
 
-        <div class="six wide field">
-            <label>Email</label>
-            <input type="text" name="Email" placeholder="Email">
-        </div>
-
+{#        <div class="six wide field">#}
+{#            <label>Email</label>#}
+{#            <input type="text" name="Email" placeholder="Email">#}
+{#        </div>#}
+    <input class="ui button"  type='submit' value='Save & Exit' name="edit_username"/>
 
     </form>
+        {% if messages %}
+            {% for message in messages %}
+            <p style="color: red">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
 
-        <a class="btn" href="{% url 'main_page' %}">
-            <button class="ui button" type="submit" style="margin-left: 10%; margin-top: 2%">Save & Exit</button>
+        <a class="btn" href="{% url 'password_change' %}">
+            <h4 style="margin-top: 2%">Change Password </h4>
         </a>
+{#        <a name="asd" class="btn" href="{% url 'main_page' %}">#}
+{#            <button class="ui button" type="submit" style="margin-left: 10%; margin-top: 2%">Save & Exit</button>#}
+{#        </a>#}
 
         <a class="btn" href="{% url 'profile_creation' %}">
             <h4 style="margin-top: 2%">Want to redo the questions? <button class="ui button" type="submit" style="margin-left: 1.5%">Click Here</button></h4>

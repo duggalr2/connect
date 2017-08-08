@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, LoginForm
+from .forms import SignUpForm, LoginForm, EditUsername
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 
 def landing_page(request):
@@ -52,8 +56,38 @@ def main_page(request):
 
 
 @login_required(login_url=reverse_lazy('landing_page'))
-def main_profile(request):
-    return render(request, "main_profile.html")
+def edit_profile(request):
+    edit_form = EditUsername(request.POST or None)
+    if request.method == 'POST':
+        if edit_form.is_valid():
+            # TODO: Checking if the username is unique
+            old_username = request.user.username
+            new_username = edit_form.cleaned_data.get('username')
+            if User.objects.filter(username=new_username).exists():
+                messages.error(request, 'Username already exists.')
+            else:
+                user = User.objects.get(username=old_username)
+                user.username = new_username
+                user.save()
+                return redirect('main_page')
+    return render(request, "edit_profile.html", {'form':edit_form})
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('main_page')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'password_reset.html', {
+        'form': form
+    })
 
 
 @login_required(login_url=reverse_lazy('landing_page'))
