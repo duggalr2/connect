@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'connect',
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,16 +44,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'allaccess',
-    'social_django',
+    # 'social_django',
 ]
 
-AUTHENTICATION_BACKENDS = (
-    # Default backend
-    'social_core.backends.facebook.FacebookAppOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-
-)
+# AUTHENTICATION_BACKENDS = (
+#     # Default backend
+#     'social_core.backends.facebook.FacebookAppOAuth2',
+#     'social_core.backends.facebook.FacebookOAuth2',
+#     'django.contrib.auth.backends.ModelBackend',
+#
+# )
 
 
 MIDDLEWARE = [
@@ -129,6 +130,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# LOGIN_REDIRECT_URL = ''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

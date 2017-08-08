@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
      {# Link to Animate cdn  #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
@@ -44,7 +45,7 @@
 {# Part 1: Questions #}
 
 {# Profile Image #}
-<h1 style="text-align: center; margin-top: 3%">Welcome Rahul!<i class="heart icon"></i></h1>
+<h1 style="text-align: center; margin-top: 3%">Welcome {{ name }}!<i class="heart icon"></i></h1>
 <h5 style="text-align: center;">Let's start with some easy questions!</h5>
 
 <div class="container" style="margin-left: 25%">
@@ -120,17 +121,17 @@
             <option value="Option 5">Alumni</option>
             <option value="Option 5">Alumni</option>
       </select>
-    <a class="btn" onclick="urlreplace()">
+    <a class="btn" href="{% url 'creation_finish' %}">
         <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Next Page<i class="star half empty icon" style="margin-left: 5%"></i></button>
     </a>
 </div>
 
-<script>
-    function urlreplace() {
-        window.location.replace({% url 'creation_finish' %});
-    }
-
-</script>
+{#<script>#}
+{#    function urlreplace() {#}
+{#        window.location.replace({% url 'creation_finish' %});#}
+{#    }#}
+{##}
+{#</script>#}
 
 
 <script>

@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from connect import views
-
-# TODO: Permissions for URLS IS GOING TO BE IMPORTANT!
+from connect import views as core_views
+from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^connect/', views.landing_page, name='landing_page'),
-    url(r'^create/', views.profile_creation, name='profile_creation'),
-    url(r'^finish/', views.creation_finish, name='creation_finish'),
-    url(r'^main/', views.main_page, name='main_page'),
-    url(r'^profile/', views.main_profile, name='main_profile'),
-    url(r'^feature/', views.feature_request, name='feature_request'),
+    url(r'^connect/', core_views.landing_page, name='landing_page'),
+    url(r'^create/', core_views.profile_creation, name='profile_creation'),
+    url(r'^finish/', core_views.creation_finish, name='creation_finish'),
+    url(r'^main/', core_views.main_page, name='main_page'),
+    url(r'^profile/', core_views.main_profile, name='main_profile'),
+    url(r'^feature/', core_views.feature_request, name='feature_request'),
+    url(r'^logout/$', views.logout, {'next_page': '/connect/'}, name='logout'),
+    # url(r'^login/$', views.login, {'template_name': 'landing_page.html'}, name='login'),
 ]
-
 
