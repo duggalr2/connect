@@ -52,15 +52,16 @@ def creation_finish(request):
 
 @login_required(login_url=reverse_lazy('landing_page'))
 def main_page(request):
+    print(request.user.username)
     return render(request, "main_page.html")
 
 
+# TODO: Need to think more about corner cases and stuff that can go wrong here!
 @login_required(login_url=reverse_lazy('landing_page'))
 def edit_profile(request):
     edit_form = EditUsername(request.POST or None)
     if request.method == 'POST':
         if edit_form.is_valid():
-            # TODO: Checking if the username is unique
             old_username = request.user.username
             new_username = edit_form.cleaned_data.get('username')
             if User.objects.filter(username=new_username).exists():
@@ -73,6 +74,7 @@ def edit_profile(request):
     return render(request, "edit_profile.html", {'form':edit_form})
 
 
+@login_required(login_url=reverse_lazy('landing_page'))
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
