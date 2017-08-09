@@ -93,6 +93,7 @@
             {% load widget_tweaks %}
             <label>New Username</label>
             {% render_field form.username  placeholder='' %}
+            <small style="color: grey"><i>Previous Username: </i>{{ old_username }}</small>
 {#            {{ render_field form.username | placeholder=field.label }}#}
         </div>
 {#        <div class="six wide field">#}

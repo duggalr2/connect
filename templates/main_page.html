@@ -48,10 +48,26 @@
 </div>
 
 <div style="text-align: center; margin-top: 3.5%;">
-    <h1>Welcome, Rahul!</h1>
-    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio turpis, feugiat id dui sed, lacinia dictum arcu.</h5>
-    <h5>Sed non est ultricies, lobortis lectus tincidunt, faucibus eros. Proin malesuada ligula lorem, ut feugiat </h5>
-    <h5>Morbi vitae ipsum dictum, vulputate felis viverra, interdum est.</h5>
+    <h1>Welcome, {{ name }}!</h1>
+    <h5>Current Profile Info: </h5>
+    <h5>{{ occupation }}</h5>
+    <h5>{{ major }}</h5>
+    <h5>{{ sport_choice }}</h5>
+    <h5>{{ music_choice }}</h5>
+    <h5>{{ movie_choice }}</h5>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+
+{#    <h5>{{ god_question }}</h5>#}
+
+{#    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio turpis, feugiat id dui sed, lacinia dictum arcu.</h5>#}
+{#    <h5>Sed non est ultricies, lobortis lectus tincidunt, faucibus eros. Proin malesuada ligula lorem, ut feugiat </h5>#}
+{#    <h5>Morbi vitae ipsum dictum, vulputate felis viverra, interdum est.</h5>#}
 </div>
 
 <div class="ui one column stackable center aligned page grid">

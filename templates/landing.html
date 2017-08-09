@@ -31,8 +31,19 @@
                         <div class="form-group">
                             {% render_field field class="form-control" placeholder=field.label %}
                         </div>
+
+                        {% if field.help_text %}
+                            <small style="color: grey">{{ field.help_text }}</small>
+                        {% endif %}
+
+                        {# TODO: ADD THE SIGNUP FIELD ERRORS! #}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+
                     {% endfor %}
                     <input class="button"  type='submit' value='Sign Up' name="sign_up"/>
+
                 </form>
 
 
@@ -107,6 +118,14 @@
                     {% endfor %}
                     <input class="button"  type='submit' value='Login' name="login"/>
                     <input type="hidden" name="next" value="{{ next }}" />
+
+{#                {% if messages %}#}
+{#                    {% for message in messages %}#}
+{#                        <p style="color: red">{{ message }}</p>#}
+{#                    {% endfor %}#}
+{#                {% endif %}#}
+
+
 {#                {{ login_form.as_p }}#}
 {#                <label for="id_username">Username</label>#}
 {#                    <div class="form-group">#}
@@ -128,6 +147,7 @@
             </form>
         </div>
     </div>
+
 
 
 
@@ -166,17 +186,29 @@
 {#        </form>#}
 
 
-            <a class="btn" href="{% url 'main_page' %}">
-                <button class="button" style="text-align: center; margin-bottom: 5%; font-family: 'Raleway', sans-serif;">Log In</button>
-            </a>
+{#            <a class="btn" href="{% url 'main_page' %}">#}
+{#                <button class="button" style="text-align: center; margin-bottom: 5%; font-family: 'Raleway', sans-serif;">Log In</button>#}
+{#            </a>#}
 
 
 {#            <div class="modal-footer">#}
 {#                <button class="btn btn-primary btn-block">Log In</button>#}
 {#            </div>#}
         </div>
-    </div>
+
+
+
+{% if messages %}
+                    {% for message in messages %}
+                        <p style="color: red">{{ message }}</p>
+                    {% endfor %}
+    {% endif %}
+
 </div>
+{#</div>#}
+
+
+
 
 {# End Div Class #}
 
