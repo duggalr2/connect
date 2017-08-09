@@ -46,10 +46,14 @@ def landing_page(request):
 @login_required(login_url=reverse_lazy('landing_page'))
 def profile_creation(request):
     first_name = request.user.first_name
-    form = FirstCreateProfile(request.POST or None)  # TODO: SEE THE FIX FOR THIS!
+    form = FirstCreateProfile(request.POST or None)  # TODO: SEE THE FIX FOR THE POST REQUEST!
     if request.method == 'POST':
         if form.is_valid():
-            print(form.cleaned_data)
+            current_user = request.user
+            current_user.profile.gender_choice = form.cleaned_data.get('gender_choice')
+            current_user.profile.occupation = form.cleaned_data.get('occupation')
+            current_user.profile.major = form.cleaned_data.get('major')
+            current_user.save()
             return redirect('creation_finish')
         else:
             form = FirstCreateProfile()
@@ -61,7 +65,12 @@ def creation_finish(request):
     form = SecondCreateProfile(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
-            print(form.cleaned_data)
+            current_user = request.user
+            current_user.profile.sport_choice = form.cleaned_data.get('sport_choice')
+            current_user.profile.music_choice = form.cleaned_data.get('music_choice')
+            current_user.profile.god_question = form.cleaned_data.get('god_question')
+            current_user.profile.program_question = form.cleaned_data.get('program_question')
+            current_user.save()
             return redirect('main_page')
         else:
             form = SecondCreateProfile()
@@ -69,7 +78,7 @@ def creation_finish(request):
 
 
 @login_required(login_url=reverse_lazy('landing_page'))
-def main_page(request):
+def main_page(request):  # TODO: If the profile questions aren't answered, bring up error messages here!
     print(request.user.username)
     return render(request, "main_page.html")
 
