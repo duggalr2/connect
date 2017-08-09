@@ -31,8 +31,6 @@
 
 </head>
 
-{# TODO: NEED TO REVISE THE QUESTIONS THAT WILL BE ASKED! #}
-{# TODO: Need to fill this page up more, looks way to empty #}
 
 <body>
 
@@ -48,9 +46,46 @@
           </div>
 </div>
 
-<div class="ui three column very relaxed grid animated fadeInUp" style="display: block; margin-left: 15%; margin-top: 2%">
+<div class="three columns animated fadeInUp" style="display: block; margin-left: 40%;">
 
-  <div class="column">
+{#  <div class="column">#}
+<br/>
+    <form id="login-form" method="post" action="{% url 'creation_finish' %}">{% csrf_token %}
+        {% load widget_tweaks %}
+
+{#        <label for="exampleRecipientInput" style="margin-top: 2%">Gender<i class="angle down icon"></i></label>#}
+{#        {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}#}
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Sport<i class="angle down icon"></i></label>
+    {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Music<i class="angle down icon"></i></label>
+    {% render_field form.music_choice class='ui fluid dropdown' multiple="" %}
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>
+    {% render_field form.movie_choice class='ui fluid dropdown' multiple="" %}
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Do you think god has humour?<i class="angle down icon"></i></label>
+    {{ form.god_question }}
+
+    <label style="margin-top: 5%" for="exampleRecipientInput">Do you want to meet people in the same program as you?<i class="angle down icon"></i></label>
+    {{ form.program_question }}
+
+    <input class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()" type='submit' value='Let me work my magic' name="first_create"/>
+{#        <a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">#}
+{#            <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>#}
+{#        </a>#}
+
+
+    </form>
+
+</div>
+
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>#}
+{#    {% render_field form.god_question class='ui fluid dropdown' multiple="" %}#}
+
+
+
 
 {#  <div class="ui vertical divider">#}
 {#    not#}
@@ -63,14 +98,14 @@
 {#  </div>#}
 {#</div>#}
 
-    <label for="exampleRecipientInput">Gender<i class="angle down icon"></i></label>
-        <select class="u-full-width" id="exampleRecipientInput">
-        <option value="Option 1">Choose One, not me though!</option>
-            <option value="Option 2">Male</option>
-            <option value="Option 3">Female</option>
-            <option value="Option 4">Other</option>
-      </select>
-
+{#    <label for="exampleRecipientInput">Gender<i class="angle down icon"></i></label>#}
+{#        <select class="u-full-width" id="exampleRecipientInput">#}
+{#        <option value="Option 1">Choose One, not me though!</option>#}
+{#            <option value="Option 2">Male</option>#}
+{#            <option value="Option 3">Female</option>#}
+{#            <option value="Option 4">Other</option>#}
+{#      </select>#}
+{##}
 {#    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>#}
 {#        <select class="u-full-width" id="exampleRecipientInput">#}
 {#        <option value="Option 1">Choose One, not me though!</option>#}
@@ -79,7 +114,7 @@
 {#            <option value="Option 4">PostDoc</option>#}
 {#            <option value="Option 5">Alumni</option>#}
 {#      </select>#}
-
+{##}
 {#    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>#}
 {#        <select class="u-full-width" id="exampleRecipientInput">#}
 {#        <option value="Option 1">Choose One, not me though!</option>#}
@@ -88,154 +123,139 @@
 {#            <option value="Option 4">PostDoc</option>#}
 {#            <option value="Option 5">Alumni</option>#}
 {#      </select>#}
-
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>
-        <select class="u-full-width" id="exampleRecipientInput">
-        <option value="Option 1">Choose One, not me though!</option>
-            <option value="Option 2">Undergraduate</option>
-            <option value="Option 3">Graduate</option>
-            <option value="Option 4">PostDoc</option>
-            <option value="Option 5">Alumni</option>
-      </select>
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Major<i class="angle down icon"></i> </label>
-        <select class="u-full-width" id="exampleRecipientInput">
-        <option value="Option 1">Choose One, not me though!</option>
-            <option value="Option 2">Undergraduate</option>
-            <option value="Option 3">Graduate</option>
-            <option value="Option 4">PostDoc</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-            <option value="Option 5">Alumni</option>
-      </select>
-
-
-      <div class="field">
-                    <label>Short Text</label>
-                    <textarea rows="2"></textarea>
-                </div>
-
-</div>
+{##}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Occupation<i class="angle down icon"></i></label>#}
+{#        <select class="u-full-width" id="exampleRecipientInput">#}
+{#        <option value="Option 1">Choose One, not me though!</option>#}
+{#            <option value="Option 2">Undergraduate</option>#}
+{#            <option value="Option 3">Graduate</option>#}
+{#            <option value="Option 4">PostDoc</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#      </select>#}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Major<i class="angle down icon"></i> </label>#}
+{#        <select class="u-full-width" id="exampleRecipientInput">#}
+{#        <option value="Option 1">Choose One, not me though!</option>#}
+{#            <option value="Option 2">Undergraduate</option>#}
+{#            <option value="Option 3">Graduate</option>#}
+{#            <option value="Option 4">PostDoc</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#            <option value="Option 5">Alumni</option>#}
+{#      </select>#}
+{##}
+{##}
+{#      <div class="field">#}
+{#                    <label>Short Text</label>#}
+{#                    <textarea rows="2"></textarea>#}
+{#                </div>#}
+{##}
+{#</div>#}
 
 {#    <div class="ui vertical divider">#}
 {#            and#}
 {#      </div>#}
 
-        <div class="column">
-            <div class="ui form">
+{#        <div class="column">#}
+{#            <div class="ui form">#}
 
 
 
-                <div class="field">
-                    <label>Short Text</label>
-                    <textarea rows="2"></textarea>
-                </div>
-
-                  <div class="inline fields">
-                      <label>What's your favorite fruit?</label>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Apples</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Oranges</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Pears</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Grapefruit</label>
-      </div>
-    </div>
-  </div>
-                <div class="grouped fields">
-    <label for="fruit">Select your second favorite fruit:</label>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Apples</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Oranges</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Pears</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="fruit" tabindex="0" class="hidden">
-        <label>Grapefruit</label>
-      </div>
-    </div>
-  </div>
-
-                <div class="ui form">
-  <div class="field">
-    <label>IQ Question? </label>
-    <input type="text">
-  </div>
-</div>
-
-
-
-{#  <div class="inline field">#}
-{#    <div class="ui checkbox">#}
-{#      <input type="checkbox" tabindex="0" class="hidden">#}
-{#      <label>Checkbox</label>#}
+{#                <div class="field">#}
+{#                    <label>Short Text</label>#}
+{#                    <textarea rows="2"></textarea>#}
+{#                </div>#}
+{##}
+{#                  <div class="inline fields">#}
+{#                      <label>What's your favorite fruit?</label>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Apples</label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Oranges</label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Pears</label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Grapefruit</label>#}
+{#      </div>#}
 {#    </div>#}
 {#  </div>#}
-
-{#                <div class="inline field">#}
-{#    <div class="ui checkbox">#}
-{#      <input type="checkbox" tabindex="0" class="hidden">#}
-{#      <label>Checkbox</label>#}
+{#                <div class="grouped fields">#}
+{#    <label for="fruit">Select your second favorite fruit:</label>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Apples</label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Oranges</label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Pears</label>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="field">#}
+{#      <div class="ui radio checkbox">#}
+{#        <input type="radio" name="fruit" tabindex="0" class="hidden">#}
+{#        <label>Grapefruit</label>#}
+{#      </div>#}
 {#    </div>#}
 {#  </div>#}
+{##}
+{#                <div class="ui form">#}
+{#  <div class="field">#}
+{#    <label>IQ Question? </label>#}
+{#    <input type="text">#}
+{#  </div>#}
+{#                </div>#}
 
 
 
-    </div>
 
-</div>
+{#    </div>#}
 
-</div>
+{#</div>#}
+{##}
+{#</div>#}
 
 
-<a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">
-    <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>
-</a>
+{#<a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">#}
+{#    <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>#}
+{#</a>#}
 
 
 <script>
@@ -260,8 +280,14 @@ function increase(){
 
 
 {# Script's #}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>#}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
+
 
     <script>
         $('.ui.radio.checkbox')

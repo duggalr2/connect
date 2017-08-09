@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, LoginForm, EditUsername
+from .forms import SignUpForm, LoginForm, EditUsername, FirstCreateProfile, SecondCreateProfile
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -7,6 +7,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+
+
+# TODO: Need to add error messages for all possible errors that can come up!
+# TODO: 404 Pages!
 
 
 def landing_page(request):
@@ -42,12 +46,26 @@ def landing_page(request):
 @login_required(login_url=reverse_lazy('landing_page'))
 def profile_creation(request):
     first_name = request.user.first_name
-    return render(request, "profile_creation.html", {'name':first_name})
+    form = FirstCreateProfile(request.POST or None)  # TODO: SEE THE FIX FOR THIS!
+    if request.method == 'POST':
+        if form.is_valid():
+            print(form.cleaned_data)
+            return redirect('creation_finish')
+        else:
+            form = FirstCreateProfile()
+    return render(request, "profile_creation.html", {'name':first_name, 'form': form})
 
 
 @login_required(login_url=reverse_lazy('landing_page'))
 def creation_finish(request):
-    return render(request, "creation_finish.html")
+    form = SecondCreateProfile(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            print(form.cleaned_data)
+            return redirect('main_page')
+        else:
+            form = SecondCreateProfile()
+    return render(request, "creation_finish.html", {'form': form})
 
 
 @login_required(login_url=reverse_lazy('landing_page'))
