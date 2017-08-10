@@ -58,12 +58,16 @@
 
     <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Sport<i class="angle down icon"></i></label>
     {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}
+    <small><i>You can select more than one!</i></small>
+
 
     <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Music<i class="angle down icon"></i></label>
     {% render_field form.music_choice class='ui fluid dropdown' multiple="" %}
+    <small><i>You can select more than one!</i></small>
 
     <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>
     {% render_field form.movie_choice class='ui fluid dropdown' multiple="" %}
+    <small><i>You can select more than one!</i></small>
 
     <label style="margin-top: 5%" for="exampleRecipientInput">Do you think god has humour?<i class="angle down icon"></i></label>
     {{ form.god_question }}
@@ -72,7 +76,9 @@
     {{ form.program_question }}
 
     <input class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()" type='submit' value='Let me work my magic' name="first_create"/>
-{#        <a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">#}
+    <small><a href="{% url 'main_page' %}" onclick="skipQuestion()">Skip Questions for now (not a wise decision...)</a></small>
+
+        {#        <a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">#}
 {#            <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>#}
 {#        </a>#}
 

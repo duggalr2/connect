@@ -8,11 +8,28 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 import ast
+from django.contrib.auth.decorators import user_passes_test
+from django.conf import settings
+
+
+def anonymous_required(function=None, redirect_url=None):
+    if not redirect_url:
+        redirect_url = settings.LOGIN_REDIRECT_URL
+
+    actual_decorator = user_passes_test(
+        lambda u: u.is_anonymous(),
+        login_url=redirect_url
+    )
+
+    if function:
+        return actual_decorator(function)
+    return actual_decorator
+
 
 # TODO: Need to add error messages for all possible errors that can come up!
 # TODO: 404 Pages!
 
-
+@anonymous_required(redirect_url='/main/')
 def landing_page(request):
     sign_form = SignUpForm(request.POST or None)
     login_form = LoginForm(request.POST or None)
@@ -22,14 +39,26 @@ def landing_page(request):
 
     if request.method == 'POST' and 'sign_up' in request.POST:  # TODO: Add error for signup's!
         if sign_form.is_valid():
-            user = sign_form.save()
-            user.refresh_from_db()
+
             user_email = sign_form.cleaned_data.get('email')
-            if User.objects.filter(email=user_email).exists():  # TODO: Email is duplicate error shows but still creates user!
-                print(user_email)
+            if User.objects.filter(email=user_email).exists():
                 messages.error(request, 'Email already exists...')
                 return redirect('landing_page')
+
+            # username = sign_form.cleaned_data.get('username')
+            # if User.objects.filter(username=username).exists():
+            #     messages.error(request, 'Username already exists...')
+            #     return redirect('landing_page')
+            #
+            # password1 = sign_form.cleaned_data.get('password1')
+            # password2 = sign_form.cleaned_data.get('password2')
+            # if password1 != password2:
+            #     messages.error(request, "The 2 Password's are not the same...")
+            #     return redirect('landing_page')
+
             else:
+                user = sign_form.save()
+                user.refresh_from_db()
                 user.profile.first_name = sign_form.cleaned_data.get('first_name')
                 user.profile.last_name = sign_form.cleaned_data.get('last_name')
                 user.profile.email = sign_form.cleaned_data.get('email')
@@ -39,8 +68,21 @@ def landing_page(request):
                 user = authenticate(username=username, password=raw_password)
                 login(request, user)
                 return redirect('profile_creation')
+
+        # username = sign_form.cleaned_data.get('username')
+        # if User.objects.filter(username=username).exists():
+        #     messages.error(request, 'Username already exists...')
+        #     return redirect('landing_page')
+        #
+        # password1 = sign_form.cleaned_data.get('password1')
+        # password2 = sign_form.cleaned_data.get('password2')
+        # if password1 != password2:
+        #     messages.error(request, "The 2 Password's are not the same...")
+        #     return redirect('landing_page')
+
         else:
             sign_form = SignUpForm()
+            # return redirect('landing_page')
 
     elif request.method == 'POST' and 'login' in request.POST:
         if login_form.is_valid():
@@ -106,22 +148,25 @@ def main_page(request):  # TODO: If the profile questions aren't answered, bring
     major = current_user.profile.major
 
     sport_choice = current_user.profile.sport_choice
-    sport_choice = ast.literal_eval(sport_choice)
-    sport_choice = [n.strip() for n in sport_choice]
+    if sport_choice != '':
+        sport_choice = ast.literal_eval(sport_choice)
+        sport_choice = [n.strip() for n in sport_choice]
 
     music_choice = current_user.profile.music_choice
-    music_choice = ast.literal_eval(music_choice)
-    music_choice = [n.strip() for n in music_choice]
+    if music_choice != '':
+        music_choice = ast.literal_eval(music_choice)
+        music_choice = [n.strip() for n in music_choice]
 
     movie_choice = current_user.profile.movie_choice
-    movie_choice = ast.literal_eval(movie_choice)
-    movie_choice = [n.strip() for n in movie_choice]
+    if movie_choice != '':
+        movie_choice = ast.literal_eval(movie_choice)
+        movie_choice = [n.strip() for n in movie_choice]
 
     god_question = current_user.profile.god_question
     program_question = current_user.profile.program_question
 
     if len(major) == 0 or len(sport_choice) == 0 or len(music_choice) == 0:
-        messages.error(request, "To get accurate recommendation's, please answer the questions!")
+        messages.error(request, "To get accurate recommendation's, please answer majority of the questions!")
 
     return render(request, "main_page.html", {'name': first_name, 'occupation': occupation,
                                               'major':major, 'sport_choice':sport_choice,
@@ -144,7 +189,7 @@ def edit_profile(request):  # TODO: pass the existing instance?
                 user.username = new_username
                 user.save()
                 return redirect('main_page')
-    return render(request, "edit_profile.html", {'form':edit_form, 'old_username': request.user.username})
+    return render(request, "edit_profile.html", {'form': edit_form, 'old_username': request.user.username})
 
 
 @login_required(login_url=reverse_lazy('landing_page'))

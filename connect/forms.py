@@ -52,9 +52,9 @@ PROGRAM_CHOICES = (
 
 
 class FirstCreateProfile(forms.Form):
-    gender_choice = forms.ChoiceField(choices=GENDER_CHOICES,)
-    occupation = forms.ChoiceField(choices=OCCUPATION_CHOICES, )
-    major = forms.MultipleChoiceField(choices=PROGRAM_CHOICES, )
+    gender_choice = forms.ChoiceField(choices=GENDER_CHOICES, required=False)
+    occupation = forms.ChoiceField(choices=OCCUPATION_CHOICES, required=False)
+    major = forms.MultipleChoiceField(choices=PROGRAM_CHOICES, required=False)
 
 
 SPORT_CHOICES = (
@@ -91,8 +91,8 @@ MOVIE_CHOICES = (
 
 
 class SecondCreateProfile(forms.Form):
-    sport_choice = forms.MultipleChoiceField(choices=SPORT_CHOICES, )
-    music_choice = forms.MultipleChoiceField(choices=MUSIC_CHOICES, )
-    movie_choice = forms.MultipleChoiceField(choices=MOVIE_CHOICES, )
-    god_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')))
-    program_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')))
+    sport_choice = forms.MultipleChoiceField(choices=SPORT_CHOICES, required=False)
+    music_choice = forms.MultipleChoiceField(choices=MUSIC_CHOICES, required=False)
+    movie_choice = forms.MultipleChoiceField(choices=MOVIE_CHOICES, required=False)
+    god_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')), required=False)
+    program_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')), required=False)

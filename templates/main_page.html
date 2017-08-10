@@ -58,7 +58,8 @@
 
     {% if messages %}
         {% for message in messages %}
-            <p style="color: red">{{ message }}</p>
+            <h4 style="color: red">{{ message }}</h4>
+            <a href="{% url 'profile_creation' %}">Click here to do it now</a>
         {% endfor %}
     {% endif %}
 

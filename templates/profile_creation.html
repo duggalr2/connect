@@ -93,12 +93,13 @@
 
         <label style="margin-top: 5%" for="exampleRecipientInput">Major<i class="angle down icon"></i> </label>
         {% render_field form.major class='ui fluid dropdown' multiple="" %}
-
+        <small><i>You can select more than one!</i></small>
 {#        <a class="btn" href="{% url 'creation_finish' %}">#}
 {#            <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Next Page<i class="star half empty icon" style="margin-left: 5%"></i></button>#}
 {#        </a>#}
 
         <input class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()" type='submit' value='Next Page' name="first_create"/>
+        <small><a href="{% url 'main_page' %}" onclick="skipQuestion()">Skip Questions for now (not a wise decision...)</a></small>
     </form>
 
 {#    <select name="skills" multiple="" class="ui fluid dropdown">#}
@@ -176,6 +177,12 @@
 {#    }#}
 {##}
 {#</script>#}
+
+<script>
+function skipQuestion() {
+    alert("Probably wasn't the best decision... :(");
+}
+</script>
 
 
 <script>

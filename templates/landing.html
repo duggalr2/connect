@@ -36,7 +36,6 @@
                             <small style="color: grey">{{ field.help_text }}</small>
                         {% endif %}
 
-                        {# TODO: ADD THE SIGNUP FIELD ERRORS! #}
                         {% for error in field.errors %}
                             <p style="color: red">{{ error }}</p>
                         {% endfor %}
@@ -199,10 +198,17 @@
 
 
 {% if messages %}
-                    {% for message in messages %}
-                        <p style="color: red">{{ message }}</p>
-                    {% endfor %}
-    {% endif %}
+    {% for message in messages %}
+        <p style="color: red">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{# TODO: ADD THE SIGNUP FIELD ERRORS! #}
+{% for error in sign_form.field.errors %}
+    {{ error }}
+{% endfor %}
+
+
 
 </div>
 {#</div>#}
