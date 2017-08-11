@@ -43,66 +43,147 @@
     <div class="row">
               <h1 style="text-align: center; margin-top: 3%">Almost Done...<i class="flag checkered icon"></i></h1>
               <h5 style="text-align: center;">Trust me, they aren't as hard as they look!</h5>
-          </div>
+      </div>
 </div>
-
-<div class="three columns animated fadeInUp" style="display: block; margin-left: 40%;">
-
+{##}
+{#<div class="three columns animated fadeInUp" style="display: block; margin-left: 40%;">#}
+{##}
 {#  <div class="column">#}
-<br/>
-    <form id="login-form" method="post" action="{% url 'creation_finish' %}">{% csrf_token %}
-        {% load widget_tweaks %}
-
+{#<br/>#}
+{##}
+{#    <form id="login-form" method="post" action="{% url 'creation_finish' %}">{% csrf_token %}#}
+{#        {% load widget_tweaks %}#}
+{##}
 {#        <label for="exampleRecipientInput" style="margin-top: 2%">Gender<i class="angle down icon"></i></label>#}
 {#        {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}#}
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Sport<i class="angle down icon"></i></label>
-    {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}
-    <small><i>You can select more than one!</i></small>
-
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Music<i class="angle down icon"></i></label>
-    {% render_field form.music_choice class='ui fluid dropdown' multiple="" %}
-    <small><i>You can select more than one!</i></small>
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>
-    {% render_field form.movie_choice class='ui fluid dropdown' multiple="" %}
-    <small><i>You can select more than one!</i></small>
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Do you think god has humour?<i class="angle down icon"></i></label>
-    {{ form.god_question }}
-
-    <label style="margin-top: 5%" for="exampleRecipientInput">Do you want to meet people in the same program as you?<i class="angle down icon"></i></label>
-    {{ form.program_question }}
-
-    <input class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()" type='submit' value='Let me work my magic' name="first_create"/>
-    <small><a href="{% url 'main_page' %}" onclick="skipQuestion()">Skip Questions for now (not a wise decision...)</a></small>
-
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Sport<i class="angle down icon"></i></label>#}
+{#    {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}#}
+{#    <small><i>You can select more than one!</i></small>#}
+{##}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Music<i class="angle down icon"></i></label>#}
+{#    {% render_field form.music_choice class='ui fluid dropdown' multiple="" %}#}
+{#    <small><i>You can select more than one!</i></small>#}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>#}
+{#    {% render_field form.movie_choice class='ui fluid dropdown' multiple="" %}#}
+{#    <small><i>You can select more than one!</i></small>#}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Subject Interest<i class="angle down icon"></i></label>#}
+{#    {% render_field form.subject_interest_question class='ui fluid dropdown' multiple="" %}#}
+{#    <small><i>You can select more than one!</i></small>#}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Hobby of Interest<i class="angle down icon"></i></label>#}
+{#    {% render_field form.hobby_question class='ui fluid dropdown' multiple="" %}#}
+{#    <small><i>You can select more than one!</i></small>#}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Do you think god has humour?<i class="angle down icon"></i></label>#}
+{#    {{ form.god_question }}#}
+{##}
+{#    <label style="margin-top: 5%" for="exampleRecipientInput">Do you want to meet people in the same program as you?<i class="angle down icon"></i></label>#}
+{#    {{ form.program_question }}#}
+{##}
+{#    <input class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()" type='submit' value='Let me work my magic' name="first_create"/>#}
+{#    <small><a href="{% url 'main_page' %}" onclick="skipQuestion()">Skip Questions for now (not a wise decision...)</a></small>#}
+{##}
         {#        <a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">#}
 {#            <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>#}
 {#        </a>#}
+{##}
+{##}
+{#    </form>#}
+{#  </div>#}
+{#          <div class="column">#}
+{#    <p>asdasdas</p>#}
+{#    <p>dasdasdasd</p>#}
+{#    <p>asdasd</p>#}
+{#    <p></p>#}
+{#  </div>#}
+{##}
+{#</div>#}
 
+
+<div class="ui three column doubling stackable grid container">
+
+
+    <div class="column" style="margin-left: 20%">
+
+        <form id="login-form" method="post" action="{% url 'creation_finish' %}">{% csrf_token %}
+            {% load widget_tweaks %}
+
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Sport<i class="angle down icon"></i></label>
+        {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}
+        <small><i>You can select more than one!</i></small>
+
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Music<i class="angle down icon"></i></label>
+        {% render_field form.music_choice class='ui fluid dropdown' multiple="" %}
+        <small><i>You can select more than one!</i></small>
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>
+        {% render_field form.movie_choice class='ui fluid dropdown' multiple="" %}
+        <small><i>You can select more than one!</i></small>
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Subject Interest<i class="angle down icon"></i></label>
+        {% render_field form.subject_interest_question class='ui fluid dropdown' multiple="" %}
+        <small><i>You can select more than one!</i></small>
+    </div>
+
+    <div class="column">
+        <label style="margin-top: 5%" for="exampleRecipientInput">Hobby of Interest<i class="angle down icon"></i></label>
+        {% render_field form.hobby_question class='ui fluid dropdown' multiple="" %}
+        <small><i>You can select more than one!</i></small>
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Do you think god has humour?<i class="angle down icon"></i></label>
+        {{ form.god_question }}
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Do you want to meet people in the same program as you?<i class="angle down icon"></i></label>
+        {{ form.program_question }}
+
+    </div>
+
+    <input class="button button-primary" style="text-align: center; display: block; margin: auto; margin-left: 50%; font-family: 'Raleway', sans-serif;" onclick="increase()" type='submit' value='Let me work my magic' name="first_create"/>
+{#    <a href="{% url 'main_page' %}" onclick="skipQuestion()" style="font-family: 'Raleway', sans-serif;">Skip Questions for now (not a wise decision...)</a>#}
+
+
+{#<a class="btn animated fadeOut" onclick="urlreplace()" style="margin-top: 1em">#}
+{#    <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Let me work my magic now!<i class="star icon" style="margin-left: 5%"></i></button>#}
+{#</a>#}
 
     </form>
 
+
 </div>
+
+{#<div style="text-align:center">#}
+{#  <a href="http//www.google.com">Search</a>#}
+{#  <!-- more links here -->#}
+{#</div>#}
+{##}
+{#<div class="container animated fadeInUp">#}
+{#    <div class="row">#}
+{#        <a href="http//www.google.com"><span style="text-align:center">Search</span></a>#}
+{#        <a href="{% url 'main_page' %}" style="margin-top: 40%; margin-left: 40%" onclick="skipQuestion()">Skip Questions for now (not a wise decision...)</a>#}
+{#      </div>#}
+{#</div>#}
+
+
+
+
+
+
 
 {#    <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Movie Genre<i class="angle down icon"></i></label>#}
 {#    {% render_field form.god_question class='ui fluid dropdown' multiple="" %}#}
 
 
 
-
 {#  <div class="ui vertical divider">#}
-{#    not#}
+{##}
 {#  </div>#}
-{#  <div class="column">#}
-{#    <p></p>#}
-{#    <p></p>#}
-{#    <p></p>#}
-{#    <p></p>#}
-{#  </div>#}
-{#</div>#}
+
 
 {#    <label for="exampleRecipientInput">Gender<i class="angle down icon"></i></label>#}
 {#        <select class="u-full-width" id="exampleRecipientInput">#}
@@ -305,7 +386,6 @@ function increase(){
         ;
 
     </script>
-
 
 
 </body>

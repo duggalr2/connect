@@ -17,6 +17,8 @@ class Profile(models.Model):
     movie_choice = models.CharField(max_length=500, blank=True)
     god_question = models.CharField(max_length=500, blank=True)
     program_question = models.CharField(max_length=500, blank=True)
+    hobby_question = models.CharField(max_length=500, blank=True)
+    subject_interest_question = models.CharField(max_length=500, blank=True)
 
 
 @receiver(post_save, sender=User)
@@ -28,3 +30,8 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+
+# What do you do and think when you disagree strongly with someone?
+# What is the worst thing you've ever done?
+# If you could trade lives with anyone in the world, who would it be?

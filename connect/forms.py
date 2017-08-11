@@ -69,15 +69,23 @@ SPORT_CHOICES = (
 )
 
 MUSIC_CHOICES = (
-    ('jazz', 'Jazz'),
+    ('dance_disco_funk', 'Dance, Disco, Funk'),
+    ('folk', 'Folk'),
+    ('classical', 'Classical'),
+    ('jazz', 'Jazz, Swing'),
     ('rock', 'Rock'),
-    ('hip_hop', 'Hip Hop'),
+    ('hip_hop', 'Hip Hop, Rap'),
     ('pop', 'Pop'),
     ('country', 'Country'),
-    ('heavy_metal', 'Heavy Metal'),
-    ('edm', 'Electronic Dance Music'),
-    ('drill_trap', 'Drill Trap Music'),
-    ('k_pop', 'K-Pop'),
+    ('edm', 'EDM'),
+    ('musicals', 'Musicals'),
+    ('hard_rock', 'Metal, Hard Rock'),
+    ('reggae', 'Reggae'),
+    ('latin', 'Latin'),
+    ('techno', 'Techno, Trance'),
+    ('opera', 'Opera'),
+    ('rock_roll', 'Rock n Roll'),
+    ('alt_music', 'Alternative Music')
 )
 
 MOVIE_CHOICES = (
@@ -87,6 +95,86 @@ MOVIE_CHOICES = (
     ('documentary', 'Documentary'),
     ('romance', 'Romantic'),
     ('comedy', 'Comedy'),
+    ('thriller', 'Thriller'),
+    ('sci-fi', 'Sci-fi'),
+    ('war', 'Wars'),
+    ('tales', 'Tales'),
+    ('tales', 'Tales'),
+    ('cartoons', 'Cartoons'),
+    ('western', 'Western'),
+    ('cartoons', 'Cartoons'),
+    ('not_a_fan', 'Not a fan of movies :('),
+)
+
+# TODO: Edit this and keep it to subject interest only, probably less physical activity and hobby type questions
+SUBJECT_INTEREST_CHOICES = (
+    ("History","History"),
+    ("Psychology","Psychology"),
+    ("Politics","Politics"),
+    ("Mathematics","Mathematics"),
+    ("Physics","Physics"),
+    ("Software_Computers","Software, Computers"),
+    ("Economy, Management","Economy Management"),
+    ("Biology","Biology"),
+    ("Chemistry","Chemistry"),
+    ("Poetry_reading","Reading"),
+    ("Geography","Geography"),
+    ("Foreign_languages","Foreign languages"),
+    ("Medicine","Medicine"),
+    ("Law","Law"),
+    ("Cars","Cars"),
+    ("Art","Art exhibitions"),
+    ("Religion","Religion"),
+    ("Outdoor_activities","Countryside, outdoors"),
+    ("Dancing","Dancing"),
+    ("Playing musical instruments","Musical instruments"),
+    ("Poetry writing","Writing"),
+    ("Sport_leisure activities","Sports"),
+    ("Gardening","Gardening"),
+    ("Celebrity","Celebrities, Celebrity Lifestyle, Gossip"),
+    ("Shopping","Shopping"),
+    ("Science_technology","Science and technology"),
+    ("Theatre","Theatre"),
+    ("Socializing","Fun with friends"),
+    ("Adrenaline_sports","Adrenaline sports"),
+    ("Pets","Pets"),
+)
+
+# TODO: Edit this, get feedback on this list!
+HOBBY_CHOICES = (
+    ('3d_printing', '3D Printing'),
+    ('acting', 'Acting'),
+    ('coffee_roasting', 'Coffee Roasting'),
+    ('computer_programming', 'Computer Programming'),
+    ('cooking', 'Cooking'),
+    ('dance', 'Dance'),
+    ('puzzles', 'Solving Puzzles, Jigsaw Puzzles'),
+    ('cryptography', 'Cryptography'),
+    ('fashion', 'Fashion'),
+    ('gaming', 'Gaming'),
+    ('ice_skating', 'Ice Skating'),
+    ('knife_making', 'Knife Making'),
+    ('juggling', 'Juggling'),
+    ('billard', 'Billard'),
+    ('knitting', 'Knitting'),
+    ('machining', 'Machining'),
+    ('origami', 'Origami'),
+    ('painting', 'Painting'),
+    ('reading', 'Reading'),
+    ('yoga', 'Yoga'),
+    ('debating', 'Debating'),
+    ('writing', 'Writing'),
+    ('jogging', 'Jogging'),
+    ('basketball', 'Basketball'),
+    ('tennis', 'Tennis'),
+    ('baseball', 'Baseball'),
+    ('fishing', 'Fishing'),
+    ('hockey', 'Hockey, Ball Hockey'),
+    ('swimming', 'Swimming'),
+    ('soccer', 'Soccer'),
+    ('rock_climbing', 'Rock Climbing'),
+    ('walking', 'Walking'),
+    ('biking', 'Biking'),
 )
 
 
@@ -96,3 +184,5 @@ class SecondCreateProfile(forms.Form):
     movie_choice = forms.MultipleChoiceField(choices=MOVIE_CHOICES, required=False)
     god_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')), required=False)
     program_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')), required=False)
+    subject_interest_question = forms.MultipleChoiceField(choices=SUBJECT_INTEREST_CHOICES, required=False)
+    hobby_question = forms.MultipleChoiceField(choices=HOBBY_CHOICES, required=False)
