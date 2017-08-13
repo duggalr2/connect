@@ -16,9 +16,11 @@ class Profile(models.Model):
     music_choice = models.CharField(max_length=500, blank=True)
     movie_choice = models.CharField(max_length=500, blank=True)
     god_question = models.CharField(max_length=500, blank=True)
-    program_question = models.CharField(max_length=500, blank=True)
+    program_question = models.CharField(max_length=500, default='yes')
     hobby_question = models.CharField(max_length=500, blank=True)
     subject_interest_question = models.CharField(max_length=500, blank=True)
+    faculty_question = models.CharField(max_length=50, blank=True)
+    # faculty_choice_question = models.CharField(max_length=500, blank=True)
 
 
 @receiver(post_save, sender=User)

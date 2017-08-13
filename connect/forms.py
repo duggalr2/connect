@@ -177,6 +177,27 @@ HOBBY_CHOICES = (
     ('biking', 'Biking'),
 )
 
+# TODO: NEED TO ADD GRADUATE FACULTIES
+FACULTY_CHOICES = (
+    ('applied_science_engineering', 'Applied Science and Engineering'),
+    ('architecture_design', 'Architecture, Landscape, and Design'),
+    ('arts_science', 'Arts and Science'),
+    ('continuing_studies', 'Continuing Studies'),
+    ('dentistry', 'Dentistry'),
+    ('education', 'Education'),
+    ('forestry', 'Forestry'),
+    ('information', 'Information'),
+    ('kinesiology_physical_education', 'Kinesiology and Physical Education'),
+    ('law', 'Law'),
+    ('management', 'Management'),
+    ('medicine', 'Medicine'),
+    ('music', 'Music'),
+    ('nursing', 'Nursing'),
+    ('pharmacy', 'Pharmacy'),
+    ('public_health', 'Public Health'),
+    ('social_work', 'Social Work'),
+)
+
 
 class SecondCreateProfile(forms.Form):
     sport_choice = forms.MultipleChoiceField(choices=SPORT_CHOICES, required=False)
@@ -186,3 +207,5 @@ class SecondCreateProfile(forms.Form):
     program_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')), required=False)
     subject_interest_question = forms.MultipleChoiceField(choices=SUBJECT_INTEREST_CHOICES, required=False)
     hobby_question = forms.MultipleChoiceField(choices=HOBBY_CHOICES, required=False)
+    # faculty_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')))
+    faculty_choice_question = forms.MultipleChoiceField(choices=FACULTY_CHOICES, required=False)

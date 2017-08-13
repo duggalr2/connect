@@ -112,11 +112,9 @@
         <form id="login-form" method="post" action="{% url 'creation_finish' %}">{% csrf_token %}
             {% load widget_tweaks %}
 
-
         <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Sport<i class="angle down icon"></i></label>
         {% render_field form.sport_choice class='ui fluid dropdown' multiple="" %}
         <small><i>You can select more than one!</i></small>
-
 
         <label style="margin-top: 5%" for="exampleRecipientInput">Favorite Music<i class="angle down icon"></i></label>
         {% render_field form.music_choice class='ui fluid dropdown' multiple="" %}
@@ -141,6 +139,10 @@
 
         <label style="margin-top: 5%" for="exampleRecipientInput">Do you want to meet people in the same program as you?<i class="angle down icon"></i></label>
         {{ form.program_question }}
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Faculty of Interest<i class="angle down icon"></i></label>
+        {% render_field form.faculty_choice_question class='ui fluid dropdown' multiple="" attrs=disabled %}
+        <small><i>You can select more than one!</i></small>
 
     </div>
 
