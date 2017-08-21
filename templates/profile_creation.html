@@ -94,6 +94,15 @@
         <label style="margin-top: 5%" for="exampleRecipientInput">Major<i class="angle down icon"></i> </label>
         {% render_field form.major class='ui fluid dropdown' multiple="" %}
         <small><i>You can select more than one!</i></small>
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Current Faculty<i class="angle down icon"></i> </label>
+        {% render_field form.user_faculty class='ui fluid dropdown' multiple="" %}
+        <small><i>You can select more than one!</i></small>
+
+        <label style="margin-top: 5%" for="exampleRecipientInput">Use Case<i class="angle down icon"></i> </label>
+        {% render_field form.use_case class='ui fluid dropdown' multiple="" %}
+
+
 {#        <a class="btn" href="{% url 'creation_finish' %}">#}
 {#            <button class="button button-primary" style="text-align: center; display: block; margin: auto; margin-top: 10%; font-family: 'Raleway', sans-serif;" onclick="increase()">Next Page<i class="star half empty icon" style="margin-left: 5%"></i></button>#}
 {#        </a>#}

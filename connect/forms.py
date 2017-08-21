@@ -51,12 +51,6 @@ PROGRAM_CHOICES = (
 )
 
 
-class FirstCreateProfile(forms.Form):
-    gender_choice = forms.ChoiceField(choices=GENDER_CHOICES, required=False)
-    occupation = forms.ChoiceField(choices=OCCUPATION_CHOICES, required=False)
-    major = forms.MultipleChoiceField(choices=PROGRAM_CHOICES, required=False)
-
-
 SPORT_CHOICES = (
     ('basketball', 'Basketball'),
     ('hockey', 'Hockey'),
@@ -199,6 +193,20 @@ FACULTY_CHOICES = (
 )
 
 
+USE_CASE = (
+    ('gym', 'Looking for a Gym Buddy/Partner'),
+    ('friend', 'Looking for a Friend'),
+)
+
+
+class FirstCreateProfile(forms.Form):
+    gender_choice = forms.ChoiceField(choices=GENDER_CHOICES, required=False)
+    occupation = forms.ChoiceField(choices=OCCUPATION_CHOICES, required=False)
+    major = forms.MultipleChoiceField(choices=PROGRAM_CHOICES, required=False)
+    user_faculty = forms.MultipleChoiceField(choices=FACULTY_CHOICES, required=False)
+    use_case = forms.ChoiceField(choices=USE_CASE, required=True)
+
+
 class SecondCreateProfile(forms.Form):
     sport_choice = forms.MultipleChoiceField(choices=SPORT_CHOICES, required=False)
     music_choice = forms.MultipleChoiceField(choices=MUSIC_CHOICES, required=False)
@@ -209,3 +217,5 @@ class SecondCreateProfile(forms.Form):
     hobby_question = forms.MultipleChoiceField(choices=HOBBY_CHOICES, required=False)
     # faculty_question = forms.ChoiceField(choices=(('yes', 'Yes'), ('no', 'No')))
     faculty_choice_question = forms.MultipleChoiceField(choices=FACULTY_CHOICES, required=False)
+
+

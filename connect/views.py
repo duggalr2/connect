@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from connect.models import Profile
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
@@ -11,6 +12,10 @@ import ast
 from django.contrib.auth.decorators import user_passes_test
 from django.conf import settings
 
+
+# TODO: Signup Modal: Need to add error messages for all possible errors that can come up
+# TODO: 404 Pages!
+# TODO: Add email/username login
 
 def anonymous_required(function=None, redirect_url=None):
     if not redirect_url:
@@ -26,16 +31,10 @@ def anonymous_required(function=None, redirect_url=None):
     return actual_decorator
 
 
-# TODO: Need to add error messages for all possible errors that can come up!
-# TODO: 404 Pages!
-
 @anonymous_required(redirect_url='/main/')
 def landing_page(request):
     sign_form = SignUpForm(request.POST or None)
     login_form = LoginForm(request.POST or None)
-
-    # if request.user is not None:  # TODO: need to add a catch if user is logged in and on landing page!
-    #     return redirect('main_page')
 
     if request.method == 'POST' and 'sign_up' in request.POST:  # TODO: Add error for signup's!
         if sign_form.is_valid():
@@ -44,18 +43,6 @@ def landing_page(request):
             if User.objects.filter(email=user_email).exists():
                 messages.error(request, 'Email already exists...')
                 return redirect('landing_page')
-
-            # username = sign_form.cleaned_data.get('username')
-            # if User.objects.filter(username=username).exists():
-            #     messages.error(request, 'Username already exists...')
-            #     return redirect('landing_page')
-            #
-            # password1 = sign_form.cleaned_data.get('password1')
-            # password2 = sign_form.cleaned_data.get('password2')
-            # if password1 != password2:
-            #     messages.error(request, "The 2 Password's are not the same...")
-            #     return redirect('landing_page')
-
             else:
                 user = sign_form.save()
                 user.refresh_from_db()
@@ -69,20 +56,8 @@ def landing_page(request):
                 login(request, user)
                 return redirect('profile_creation')
 
-        # username = sign_form.cleaned_data.get('username')
-        # if User.objects.filter(username=username).exists():
-        #     messages.error(request, 'Username already exists...')
-        #     return redirect('landing_page')
-        #
-        # password1 = sign_form.cleaned_data.get('password1')
-        # password2 = sign_form.cleaned_data.get('password2')
-        # if password1 != password2:
-        #     messages.error(request, "The 2 Password's are not the same...")
-        #     return redirect('landing_page')
-
         else:
             sign_form = SignUpForm()
-            # return redirect('landing_page')
 
     elif request.method == 'POST' and 'login' in request.POST:
         if login_form.is_valid():
@@ -142,12 +117,80 @@ def creation_finish(request):
     return render(request, "creation_finish.html", {'form': form})
 
 
+# TODO: Need to think more about corner cases and stuff that can go wrong here!!
+# TODO: pass the existing instance!!
 @login_required(login_url=reverse_lazy('landing_page'))
-def main_page(request):  # TODO: If the profile questions aren't answered, bring up error messages here!
+def edit_profile(request):
+    edit_form = EditUsername(request.POST or None)
+    if request.method == 'POST':
+        if edit_form.is_valid():
+            old_username = request.user.username
+            new_username = edit_form.cleaned_data.get('username')
+            if User.objects.filter(username=new_username).exists():
+                messages.error(request, 'Username already exists.')
+            else:
+                user = User.objects.get(username=old_username)
+                user.username = new_username
+                user.save()
+                return redirect('main_page')
+    return render(request, "edit_profile.html", {'form': edit_form, 'old_username': request.user.username})
+
+
+@login_required(login_url=reverse_lazy('landing_page'))
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('main_page')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'password_reset.html', {
+        'form': form
+    })
+
+
+def get_user_information(current_user):
+    """Get User information for recommendation's"""
+    gender = current_user.profile.gender_choice
+    occupation = current_user.profile.occupation
+    current_faculty = current_user.profile.user_faculty
+    user_sport = current_user.profile.sport_choice
+    user_subject = current_user.profile.subject_interest_question
+    user_id = current_user.profile.id
+    initial_filter = Profile.objects.all().filter(gender_choice=gender, occupation=occupation)
+    sport_user_choice, subject_choice, faculty_choice = [], [], []
+    for profile in initial_filter:
+        sport = profile.sport_choice
+        subject = profile.subject_interest_question
+        faculty = profile.user_faculty
+        if sport in user_sport:
+            profile_id = profile.id
+            if profile_id != user_id:
+                sport_user_choice.append(profile)
+        if subject in user_subject:
+            profile_id = profile.id
+            if profile_id != user_id:
+                subject_choice.append(profile)
+        if faculty != '' and faculty in current_faculty:
+            profile_id = profile.id
+            if profile_id != user_id:
+                faculty_choice.append(profile)
+    
+
+@login_required(login_url=reverse_lazy('landing_page'))
+def main_page(request):
     current_user = request.user
     first_name = current_user.profile.first_name
     occupation = current_user.profile.occupation
     major = current_user.profile.major
+
+    if request.method == 'GET' and 'recommend' in request.GET:
+        get_user_information(current_user)
 
     sport_choice = current_user.profile.sport_choice
     if sport_choice != '':
@@ -170,48 +213,14 @@ def main_page(request):  # TODO: If the profile questions aren't answered, bring
     if len(major) == 0 or len(sport_choice) == 0 or len(music_choice) == 0:
         messages.error(request, "To get accurate recommendation's, please answer majority of the questions!")
 
-    return render(request, "main_page.html", {'name': first_name, 'occupation': occupation,
+    return render(request, "main_page.html", {'name': first_name.capitalize(), 'occupation': occupation,
                                               'major':major, 'sport_choice':sport_choice,
                                               'music_choice':music_choice, 'movie_choice':movie_choice,
                                               'god_question':god_question, 'program_question':program_question})
 
 
-# TODO: Need to think more about corner cases and stuff that can go wrong here!
-@login_required(login_url=reverse_lazy('landing_page'))
-def edit_profile(request):  # TODO: pass the existing instance?
-    edit_form = EditUsername(request.POST or None)
-    if request.method == 'POST':
-        if edit_form.is_valid():
-            old_username = request.user.username
-            new_username = edit_form.cleaned_data.get('username')
-            if User.objects.filter(username=new_username).exists():
-                messages.error(request, 'Username already exists.')
-            else:
-                user = User.objects.get(username=old_username)
-                user.username = new_username
-                user.save()
-                return redirect('main_page')
-    return render(request, "edit_profile.html", {'form': edit_form, 'old_username': request.user.username})
-
-
-@login_required(login_url=reverse_lazy('landing_page'))
-def change_password(request):
-    if request.method == 'POST':
-        form = PasswordChangeForm(request.user, request.POST)
-        if form.is_valid():
-            user = form.save()
-            update_session_auth_hash(request, user)  # Important!
-            messages.success(request, 'Your password was successfully updated!')
-            return redirect('main_page')
-        else:
-            messages.error(request, 'Please correct the error below.')
-    else:
-        form = PasswordChangeForm(request.user)
-    return render(request, 'password_reset.html', {
-        'form': form
-    })
-
-
 @login_required(login_url=reverse_lazy('landing_page'))
 def feature_request(request):
     return render(request, "feature_request.html")
+
+

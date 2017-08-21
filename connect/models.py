@@ -12,6 +12,8 @@ class Profile(models.Model):
     gender_choice = models.CharField(max_length=500, blank=True)
     occupation = models.CharField(max_length=500, blank=True)
     major = models.CharField(max_length=500, blank=True)
+    user_faculty = models.CharField(max_length=200, blank=True)
+    use_case = models.CharField(max_length=500, blank=False, default='gym')
     sport_choice = models.CharField(max_length=500, blank=True)
     music_choice = models.CharField(max_length=500, blank=True)
     movie_choice = models.CharField(max_length=500, blank=True)
