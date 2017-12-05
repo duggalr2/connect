@@ -2,13 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5ff3ee7-19a3-4836-8923-df0bc60e7a2a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/Screen Shot 2017-07-12 at 5.18.22 PM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/Screen Shot 2017-07-25 at 9.43.41 PM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshots/Screen Shot 2017-07-25 at 9.43.56 PM.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/settings.py" afterPath="$PROJECT_DIR$/project1/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/landing.html" afterPath="$PROJECT_DIR$/templates/landing.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.babelrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.banner" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.jscsrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.jshintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/contributing.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/1-1600.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/1-375.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/1-480.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/13-1600.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/13-375.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/13-480.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/2-1600.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/2-375.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/2-480.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/4-1600.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/4-375.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/4-480.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/thumb-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/thumb-13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/thumb-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/img/thumb-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-autoplay.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-autoplay.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-fullscreen.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-fullscreen.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-hash.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-hash.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-pager.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-pager.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-share.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-share.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-thumbnail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-thumbnail.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-video.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-zoom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lg-zoom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lightgallery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/demo/js/lightgallery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lg-fb-comment-box.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lg-fb-comment-box.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lg-fb-comment-box.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lg-transitions.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lg-transitions.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lg-transitions.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lightgallery.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lightgallery.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/css/lightgallery.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/fonts/lg.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/fonts/lg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/fonts/lg.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/fonts/lg.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/img/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/img/video-play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/img/vimeo-play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/img/youtube-play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/js/lightgallery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/dist/js/lightgallery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/css/lg-fb-comment-box.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/css/lg-transitions.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/css/lightgallery.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/fonts/lg.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/fonts/lg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/fonts/lg.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/fonts/lg.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/img/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/img/video-play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/img/vimeo-play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/img/youtube-play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/js/.jscsrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/js/lg-utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/js/lightgallery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-animations.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-autoplay.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-fb-comment-box.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-fonts.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-fullscreen.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-pager.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-share.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-theme-default.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-thumbnail.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-transitions.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-video.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lg-zoom.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/lightgallery.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lg/src/sass/prepros.cfg" afterPath="" />
     </list>
     <ignored path="project1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -166,7 +260,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -261,6 +354,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -600,7 +694,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23987292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24394184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -853,6 +947,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
