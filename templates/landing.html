@@ -9,10 +9,14 @@
 
 {% block content %}
 
+    <head>
+        <link rel="stylesheet" href="lg/dist/css/lightgallery.css">
+    </head>
+
 {# Div class for the title, and buttons #}
 <div style="text-align: center;" >
-<h1 class="animated fadeIn" style="margin-top:14%; font-family: 'Raleway', sans-serif;">CONNECT</h1>
-<h3 class="animated fadeIn" style="font-family: 'Raleway', sans-serif;">Add you viewing ten equally believe put. </h3>
+<h1 class="animated fadeIn" style="margin-top:14%; font-family: 'Raleway', sans-serif;">LIFELINE</h1>
+<h3 class="animated fadeIn" style="font-family: 'Raleway', sans-serif;">Connect with like-minded students on campus</h3>
 
     {# SignUp Button #}
     <button name="first_step" class="button button-primary" data-toggle="modal" data-target="#popUpWindow" style="margin-top: 1.5%; margin-right: 1.5%">Sign Up</button>
@@ -214,30 +218,51 @@
 {#</div>#}
 
 
+<div id="lightgallery">
+    <a href="screenshots/1.png">
+        <img src="screenshots/1.png">
+    </a>
+    <a href="screenshots/2.png">
+        <img src="screenshots/2.png">
+    </a>
+
+</div>
+
+    <script>
+        lightGallery(document.getElementById('lightgallery'));
+</script>
+
+
+    <script src="lg/dist/js/lightgallery.min.js"></script>
+
+    <!-- lightgallery plugins -->
+    <script src="lg/dist/js/lg-thumbnail.min.js"></script>
+{#    <script src="lg/dist/js/lg-fullscreen.min.js"></script>#}
+
 
 
 {# End Div Class #}
 
 {# Div class for the Images and text #}
-<div class="container">
-<section class="header">
-<div class="value-props row" style="margin-top: 4%">
-    <div class="four columns value-prop">
-          <img class="value-img" src="{% static 'images/pens.png' %}">
-          <p style="margin-left: 2%">Light as a feather at ~400 lines &amp; built with mobile in mind.<p>
-        </div>
-    <div class="four columns value-prop">
-          <img class="value-img" src="{% static 'images/watch.png' %}">
-          Light as a feather at ~400 lines &amp; built with mobile in mind.
-        </div>
-    <div class="four columns value-prop">
-          <img class="value-img" src="{% static 'images/feather.png' %}">
-          Light as a feather at ~400 lines &amp; built with mobile in mind.
-        </div>
-</div>
-</section>
-
+{#<div class="container">#}
+{#<section class="header">#}
+{#<div class="value-props row" style="margin-top: 4%">#}
+{#    <div class="four columns value-prop">#}
+{#          <img class="value-img" src="{% static 'images/pens.png' %}">#}
+{#          <p style="margin-left: 2%">Light as a feather at ~400 lines &amp; built with mobile in mind.<p>#}
+{#        </div>#}
+{#    <div class="four columns value-prop">#}
+{#          <img class="value-img" src="{% static 'images/watch.png' %}">#}
+{#          Light as a feather at ~400 lines &amp; built with mobile in mind.#}
+{#        </div>#}
+{#    <div class="four columns value-prop">#}
+{#          <img class="value-img" src="{% static 'images/feather.png' %}">#}
+{#          Light as a feather at ~400 lines &amp; built with mobile in mind.#}
+{#        </div>#}
+{#</div>#}
+{#</section>#}
+{##}
 {# End Div Class #}
-</div>
+{#</div>#}
 
 {% endblock %}
