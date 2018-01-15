@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+from connect.models import Major
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=250)
@@ -198,13 +198,16 @@ USE_CASE = (
     ('friend', 'Looking for a Friend'),
 )
 
+choices = [(major.id, major.major)
+           for major in Major.objects.all()]
 
 class FirstCreateProfile(forms.Form):
     gender_choice = forms.ChoiceField(choices=GENDER_CHOICES, required=False)
     occupation = forms.ChoiceField(choices=OCCUPATION_CHOICES, required=False)
-    major = forms.MultipleChoiceField(choices=PROGRAM_CHOICES, required=False)
+    # major = forms.MultipleChoiceField(choices=PROGRAM_CHOICES, required=False)
+    major = forms.MultipleChoiceField(choices=choices, required=False)
     user_faculty = forms.MultipleChoiceField(choices=FACULTY_CHOICES, required=False)
-    use_case = forms.ChoiceField(choices=USE_CASE, required=True)
+    # use_case = forms.ChoiceField(choices=USE_CASE, required=True)
 
 
 class SecondCreateProfile(forms.Form):

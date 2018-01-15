@@ -25,6 +25,10 @@ class Profile(models.Model):
     # faculty_choice_question = models.CharField(max_length=500, blank=True)
 
 
+class Major(models.Model):
+    major = models.CharField(max_length=500, blank=True)
+
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
